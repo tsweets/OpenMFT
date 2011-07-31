@@ -1,0 +1,871 @@
+
+.clearer {
+	height: 0px;
+	clear: left;
+}
+.clearR {
+	height: 0px;
+	clear: right;
+}
+
+
+
+/*elements of the main content area */
+
+
+#top .logo {
+	float: left;
+	border: 0px;
+}
+
+#top .tag {
+	float: right;
+	border: 0px;
+	margin-right: 30px;
+	margin-top: 9px;
+}
+
+#top .log {
+	float: right;
+	border: 0px;
+	margin-right: 30px;
+	margin-top: 0px;
+}
+#top .log img {
+	padding: 0px 0px 0px 20px;
+}
+#top .tag2 {
+	float: right;
+	border: 0px;
+	margin-right: 30px;
+	margin-top: 25px;
+}
+
+	/* top navigation if present */
+
+	#topNav {
+		float: right;
+		height: 25px;
+	}
+	#topNav ul {
+		list-style-type: none;
+		/* display: inline; */
+		margin-right: 30px;
+	}
+	#topNav .navLink {
+		float: left;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 9px;
+		color: #555;
+		height: 15px;
+		padding: 5px 0px;
+		border: 0px dashed #BBB;
+		text-transform: uppercase;
+	}
+	#topNav .navLink a {
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 9px;
+		color: #555;
+		text-transform: uppercase;
+		text-decoration: none;
+	}
+	#topNav .navLink a:hover {
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 9px;
+		color: #555;
+		text-transform: uppercase;
+		text-decoration: underline;
+	}
+	#topNav .divider {
+		float: left;
+		margin: 0px 10px 0px 10px;
+		width: 1px;
+		height: 21px;
+		border-left: 1px dashed #BBB;	
+	}
+
+/*bottom of main section */
+
+#bottom {
+	padding-top: 20px;
+	width: 850px;
+}
+
+
+	#logBox {
+		float: left;
+		width: 170px;
+		/*background-color: #DDEEFF; */
+		background-color: #FFFFFF;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 10px;
+		color: #555;
+		margin: 0px 5px 5px 0px;
+	}
+	#logBox .hilite {
+		width: 170px;
+		height: 50px;
+		background-color: #001166;
+	}
+	#logBox .inset {
+		width: 170px;
+		background-color: #DDEEFF;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 9px;
+		color: #888;
+		border-top: 3px solid #fff;
+		background-image: url(images/whRoundL.gif);
+		background-repeat: no-repeat;
+		background-position: left bottom;
+	}
+	#logBox .lInput {
+		width: 140px;
+		background-color: #fff;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 9px;
+		color: #888;
+		margin: 5px 0px 5px 0px;
+	}
+	
+	/* Hides from IE-mac, wisible by IE PC only, fixes layout issue on internal pages \*/
+	* html #logBox .lInput {
+		width: 134px;
+	}
+	/* End hide from IE-mac */
+	#btnLink {
+		width: 140px;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 12px;
+		color: #001166;
+		text-align: right;
+		text-transform: none;
+		margin-left: 80px;
+	}
+	#btnLink a {
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 12px;
+		color: #001166;
+		text-transform: none;
+		text-decoration: none;
+	}
+	#btnLink a:hover {
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 12px;
+		color: #001166;
+		text-transform: none;
+		text-decoration: underline;
+	}
+	#logBox .iT {
+		border-bottom: 1px dashed #BBB;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 14px;
+		color: #001166;
+		padding: 5px 0px 5px 0px;
+		margin: 0px 15px 0px 15px;
+		width: 140px;
+		height: 20px;
+	}
+	#logBox .iM {
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 9px;
+		color: #888;
+		text-transform: uppercase;
+		padding: 15px 15px 0px 15px;
+		width: 140px;
+		background-image: url(images/whRoundR.gif);
+		background-repeat: no-repeat;
+		background-position: right bottom;
+	}
+	#logBox .iB {
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 10px;
+		color: #001166;
+		text-transform: none;
+		padding: 5px 0px;
+		margin-top: 15px;
+		width: 140px;
+		height: 20px;
+		border-top: 1px dashed #BBB;
+	}
+	#logBox .iB a {
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 10px;
+		color: #001166;
+		text-transform: none;
+		text-decoration: none;
+	}
+	#logBox .iB a:hover {
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 10px;
+		color: #001166;
+		text-transform: none;
+		text-decoration: underline;
+	}
+	
+	/* sub navigation on left */
+	
+	#subNav {
+		float: left;
+		width: 170px;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 10px;
+		color: #555;
+		margin: 0px 5px 5px 0px;
+	}
+	#subNav .navImg {
+		border-top: 2px solid #BBBBBB;
+		margin: 0px 0px 5px 0px;
+		padding: 0px;
+		width: 170px;
+	}
+	#subNav ul {
+		margin: 0px;
+		padding: 0px;
+		list-style-type: none;
+	}
+	#subNav .linkBtn {
+		padding: 10px 5px 10px 5px;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 12px;
+		color: #555;
+		border-bottom: 1px dashed #BBB;
+	}
+	#subNav .lastLinkBtn {
+		padding: 10px 5px 10px 5px;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 12px;
+		color: #555;
+		border-bottom: none;
+	}
+	#subNav .lastLinkBtnActive {
+		padding: 10px 5px 10px 5px;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 12px;
+		color: #4466BB;
+		font-weight: normal;
+		border-bottom: none;
+	}
+	#subNav .linkBtn a, #subNav .lastLinkBtn a {
+		padding: 5px 0px 0px 25px;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 12px;
+		color: #555;
+		text-transform: none;
+		text-decoration: none;
+		background: url(images/arrow.gif) 0 7px no-repeat;
+	}
+	#subNav .linkBtn a:hover, #subNav .lastLinkBtn a:hover {
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 12px;
+		color: #555;
+		text-transform: none;
+		text-decoration: underline;
+		background: url(images/arrow.gif) 0 7px no-repeat;
+	}
+	#subNav .activeBtn {
+		padding: 10px 5px 10px 5px;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 12px;
+		color: #4466BB;
+		font-weight: normal;
+		border-bottom: 1px dashed #BBB;
+	}
+	#subNav .activeBtn a, #subNav .lastLinkBtnActive a {
+		padding: 5px 0px 0px 25px;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 12px;
+		color: #4466BB;
+		font-weight: normal;
+		background: url(images/arrow.gif) 0 7px no-repeat;
+	}
+	/*
+	#sidebar li a:link, #sidebar li a:visited {padding-left: 12px;
+  background: url(/pix/diamond-gray.gif) 0 0.4em no-repeat;}
+*/
+/* main area for content */
+
+#contentArea {
+	float: left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #555;
+	padding: 0px;
+	margin-bottom: 40px;
+	margin-top: 10px;
+}
+#contentAreaStatic {
+	float: left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #555;
+	padding: 0px;
+	margin-bottom: 40px;
+	width: 655px;
+}
+
+#contentAreaArticle {
+	
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #555;
+	padding: 50px;
+	margin-bottom: 40px;
+	width: 700px;
+}
+
+#contentBox {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #555;
+	
+}
+
+	/* for pages with the grid */
+
+	#contentAreaSolo {
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 10px;
+		color: #555;
+		padding: 0px;
+		margin-bottom: 40px;
+	}
+	#contentAreaSolo .wLimitL {
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 10px;
+		color: #555;
+		width: 500px;
+		margin: 0px auto 0px auto;
+	}
+	#contentBox .wLimit {
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 10px;
+		color: #555;
+		width: 500px;
+		margin: 0px auto 0px auto;
+	}
+	#gridHolder {
+		padding: 0px;
+		margin: 0px;
+	}
+	#gridHolder2 {
+		padding: 0px;
+		margin-left: 110px;
+		margin-top: 30px;
+	}
+	/* Hides from IE-mac, wisible by IE PC only, fixes layout issue on internal pages \*/
+	#gridHolder2 {
+		margin-left: 80px;
+	}
+	/* End hide from IE-mac */
+	#gridHolder .gridItem, #gridHolder2 .gridItem {
+		float: left;
+		margin: 0px 0px 0px 30px;
+		width: 120px;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 9px;
+		color: #555;
+	}
+	#gridHolder .gridItem a, #gridHolder2 .gridItem a {
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 9px;
+		color: #555;
+		text-decoration: none;
+	}
+	#gridHolder .gridItem a:hover, #gridHolder2 .gridItem a:hover {
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 9px;
+		color: #555;
+		text-decoration: underline;
+	}
+	#btnLink2 {
+		width: 140px;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 10px;
+		color: #001166;
+		text-align: right;
+		text-transform: none;
+		margin-left: 40px;
+		vertical-align: middle;
+	}
+	#btnLink2 a {
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 10px;
+		color: #001166;
+		text-transform: none;
+		text-decoration: none;
+	}
+	#btnLink2 a:hover {
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 10px;
+		color: #001166;
+		text-transform: none;
+		text-decoration: underline;
+	}
+
+/* top navigation - tab format */
+
+#tabNav {
+	background-color: #fff;
+	margin-bottom: 20px;
+	width: 100%;
+	float: left;
+
+}
+
+#tabNav ul {
+	list-style-type: none;
+	/* display: inline;  */
+	margin: 0px;
+	padding: 0px;
+}
+#tabNav .active {
+	float: left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+	color: #fff;
+	text-transform: none;
+	text-decoration: none;
+	background-color: #7799EE;
+	background-image: url(images/whRoundR.gif);
+	background-repeat: no-repeat;
+	background-position: right bottom;
+	margin-right: 10px;
+
+}
+#tabNav .active a {
+	float: left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+	color: #fff;
+	text-transform: none;
+	text-decoration: none;
+	text-align: center;
+	padding: 10px 15px 5px 15px;
+	display: block;
+	height: 20px;
+	width: 170px;
+	background-image: url(images/whRoundL.gif);
+	background-repeat: no-repeat;
+	background-position: left bottom;
+}
+#tabNav .btn {
+	float: left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #555;
+	text-transform: none;
+	text-decoration: none;
+	background-color: #DDEEFF;
+	background-image: url(images/whRoundR.gif);
+	background-repeat: no-repeat;
+	background-position: right bottom;
+	margin-right: 10px;
+}
+#tabNav .btn a {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #555;
+	text-align: center;
+	text-transform: none;
+	text-decoration: none;
+	display: block;
+	padding: 10px 15px 5px 15px;
+	height: 20px;
+	width: 170px;
+	background-image: url(images/whRoundL.gif);
+	background-repeat: no-repeat;
+	background-position: left bottom;
+}
+#tabNav .btn a:hover {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #001166;
+	text-transform: none;
+	text-decoration: none;
+}
+
+
+	/* for pages without grid */
+	
+	#gridless {
+		margin: 0px 0px 0px 15px;
+		padding: 0px;
+		border: 1px solid #fff;
+	}
+	/*hidden from IE PC */
+	* html>body #gridless {
+		float: left;
+	}
+	#gridless img {
+		margin: 0px 0px 5px 0px;
+	}
+	#gridless .image {
+		width: 340px;
+		float: right;
+		margin: 0px 0px 10px 10px;
+	}
+
+    table.rightalign {
+		float:right;
+		width: 340px;
+		margin: 0px 0px 0px 10px;
+    }
+
+
+
+/* ERROR PAGE */
+
+#flR {
+	float: right;
+	width: 170px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #555;
+	margin: 0px 0px 5px 25px;
+}
+#flR ul {
+	margin: 0px;
+	padding: 0px;
+	list-style-type: none;
+}
+#flR li {
+	padding: 10px 5px 10px 5px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #555;
+	border-bottom: 1px dashed #BBB;
+}
+#flR li a {
+	padding: 5px 0px 0px 25px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #555;
+	text-transform: none;
+	text-decoration: none;
+	background: url(images/arrow.gif) 0 7px no-repeat;
+}
+#flR li a:hover {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #555;
+	text-transform: none;
+	text-decoration: underline;
+	background: url(images/arrow.gif) 0 7px no-repeat;
+}
+/* CAPTIONS */
+#caption {
+	padding: 0px;
+	width: 150px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #888;
+	line-height: 15px;
+	background-color: #fff;
+	
+}
+#captionR {
+	float: right;
+	padding: 10px;
+	margin: 0px 0px 5px 10px;
+	width: 320px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #888;
+	line-height: 15px;
+	background-color: #fff;
+	
+}
+/* For Text on all pages */
+#textbody {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	margin: 0px 0px 0px 20px;
+}
+
+/* For Text on all pages */
+#calloutHeader {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+   margin: 0px 0px 0px 20px;
+}
+/* For page header size */
+#pageheader {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	color: #001166;
+	text-align: left;
+	line-height: 30px;
+	margin: 0px 0px 0px 20px;
+}
+#pageheader1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	color: #555;
+	margin: 0px 0px 0px 20px;
+
+	text-align: left;
+	line-height: 30px;
+}
+
+#bigPhoneNumber {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	color: #001166;
+	text-align: center;
+	line-height: 30px;
+}
+/* Customization for h5 */
+h5 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	color: #001166;
+	text-align: left;
+	line-height: 30px;
+}
+
+div.nospace ul{
+	margin-top: 0;
+}
+
+div.onespace ul{
+	margin-top: 0;
+}
+
+.spacebelow { /* to remove the spacing below any element */
+	margin-bottom: 0em;
+}
+#mainpageheader {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 27px;
+	color: #001166;
+	text-align: left;
+	line-height: 30px;
+}
+
+#mainpageheader1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	color: #555;
+
+	text-align: left;
+	line-height: 30px;
+}
+#maintextbody {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+
+
+
+/* Tony Added for MFT */
+tr.error{
+	font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: bold;
+	color: #FF0000;
+    text-decoration: none;
+}
+
+#userInfo {
+		float: left;
+		border-right: 1px dashed #BBB;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 12px;
+		color: #001166;
+		padding: 5px 0px 5px 0px;
+		margin: 0px 15px 0px 15px;
+		width: 200px;
+		height: 120px;
+		
+	}
+	
+#userHome {
+		float: left;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 14px;
+		color: #001166;
+		padding: 5px 0px 5px 0px;
+		margin: 0px 15px 0px 15px;
+		width: 240px;
+		height: 120px;
+	}
+	
+a.navLink {
+	font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: bold;
+	color: rgb(85, 85, 85);
+    text-decoration: none;
+}
+
+
+a.navLink:hover {
+	font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#navLinks {
+		border-bottom: 1px dashed #BBB;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 14px;
+		color: #001166;
+		padding: 5px 0px 5px 0px;
+		margin: 0px 15px 0px 15px;
+		width: 240px;
+		height: 120px;
+	}
+	
+	a.siteLink {
+	font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: bold;
+	color: rgb(85, 85, 85);
+    text-decoration: none;
+}
+
+
+a.siteLink:hover {
+	font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+body {
+	margin: 0px;
+	background-image: url(../images/blueCen_bg.gif);
+	background-repeat: repeat-y;
+	background-position: center;
+}
+h1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 30px;
+	color: #001166;
+	text-align: center;
+	line-height: 30px;
+}
+h2 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	color: #888;
+	text-align: center;
+	line-height: 15px;
+}
+h3 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 30px;
+	color: #001166;
+	text-align: left;
+	line-height: 30px;
+}
+h4, .subHead {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #7799EE;
+	text-align: left;
+	line-height: 15px;
+}
+
+#main {
+	width: 850px;
+	margin: 0px auto 0px auto;
+	background-color: #fff;
+	padding: 0px 15px 7px 15px;
+}
+#top {
+	width: 850px;
+	height: 95px;
+	border-bottom: 3px solid #888;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	color: #555;
+}
+/* top stripes */
+
+#topBanner {
+	height: 17px;
+	width: 100%;
+	background-color: #001166;
+	border-bottom: 4px solid #BBB;
+}
+/*bottom of main section */
+
+#bottom {
+	padding-top: 20px;
+	width: 850px;
+}
+	/* login box area */
+#loginBox {
+	    border: dotted;
+		width: 270px;
+		background-color: #DDEEFF; 
+    	font-family: Arial, Helvetica, sans-serif;
+		font-size: 10px;
+		color: #555;
+		margin: 0px 5px 5px 0px;
+}
+
+/* footer section */
+
+#footer {
+	float: left;
+	background-color: #EEE;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	color: #888;
+	width: 850px;
+	height: 27px;
+	border-top: 3px solid #888;
+}
+#footer .copyright {
+	float: left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	color: #888;
+	height: 20px;
+	padding-left: 15px;
+	margin-top: 7px;
+	background-image: url(images/whRoundL.gif);
+	background-repeat: no-repeat;
+	background-position: left bottom;
+}
+#footer .rightSide {
+	float: right;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	color: #888;
+	height: 20px;
+	padding-right: 15px;
+	margin-top: 7px;
+	background-image: url(images/whRoundR.gif);
+	background-repeat: no-repeat;
+	background-position: right bottom;
+
+}
+#footer .rightSide a {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	color: #888;
+	text-transform: none;
+	text-decoration: none;
+}
+#footer .rightSide a:hover {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	color: #888;
+	text-transform: none;
+	text-decoration: underline;
+}
