@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+  ~ Copyright (c) Tony Sweets 2011.
+  ~
+  ~ This file is part of OpenMFT.
+  ~
+  ~ OpenMFT is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ OpenMFT is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with OpenMFT.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+    <session-factory>
+
+        <!-- Database connection settings -->
+        <property name="connection.driver_class">org.h2.Driver</property>
+
+        <!-- File Based DB
+       <property name="connection.url">jdbc:h2:/tmp/test</property>
+        -->
+        <property name="connection.url">jdbc:h2:tcp://localhost:9092/tmp/test2</property>
+        <property name="connection.username"></property>
+        <property name="connection.password"></property>
+
+        <!-- JDBC connection pool (use the built-in) -->
+        <!--
+               <property name="connection.pool_size">2</property>
+        -->
+
+        <!-- SQL dialect -->
+        <property name="dialect">org.hibernate.dialect.H2Dialect</property>
+
+        <!-- Enable Hibernate's current session context -->
+        <!--
+               <property name="current_session_context_class">org.hibernate.context.ManagedSessionContext</property>
+        -->
+        <property name="current_session_context_class">thread</property>
+        <!-- Disable the second-level cache  -->
+        <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+
+        <!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">true</property>
+
+        <!-- Drop and re-create the database schema on startup -->
+        <property name="hbm2ddl.auto">create</property>
+
+        <!-- Entity Mappings -->
+        <mapping class="com.openmft.user.User"/>
+        <mapping class="com.openmft.user.Authorities"/>
+
+    </session-factory>
+
+</hibernate-configuration>
