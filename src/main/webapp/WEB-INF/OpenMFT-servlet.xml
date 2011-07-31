@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:security="http://www.springframework.org/schema/security"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/mvc
+	    http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+		http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context-3.0.xsd
+        http://www.springframework.org/schema/security
+        http://www.springframework.org/schema/security/spring-security-3.0.xsd">
+
+    <security:http auto-config="true" use-expressions="false">
+        <security:intercept-url pattern="/images/*" filters="none"/>
+        <security:intercept-url pattern='/login.htm*' filters='none'/>
+        <security:intercept-url pattern='/secure/*' access='ROLE_USER'/>
+        <security:form-login login-page='/login.htm' default-target-url='/secure/userHome.jsp'
+                             always-use-default-target='true'/>
+    </security:http>
+
+    <security:authentication-manager>
+        <security:authentication-provider>
+            <security:jdbc-user-service id="userDetailsService" data-source-ref="dataSource"
+                                        users-by-username-query="select username,password,enabled from users where username =?"
+                                        authorities-by-username-query="select username, authority from authorities auth , users u where auth.user_id = u.user_id and username =?"
+                    />
+        </security:authentication-provider>
+
+        <!--
+                <security:authentication-provider>
+                    <security:user-service>
+                        <security:user name="admin" password="admin" authorities="ROLE_USER, ROLE_ADMIN" />
+                        <security:user name="bob" password="bob" authorities="ROLE_USER" />
+                    </security:user-service>
+                </security:authentication-provider>
+        -->
+    </security:authentication-manager>
+
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="org.h2.Driver"/>
+        <property name="url" value="jdbc:h2:tcp://localhost:9092/tmp/test2"/>
+        <property name="username" value=""/>
+        <property name="password" value=""/>
+    </bean>
+
+    <!--
+        <bean id="userDetailsService" class="org.springframework.security.core.userdetails.jdbc.JdbcDaoImpl">
+            <property name="dataSource" ref="dataSource"/>
+        </bean>
+    -->
+
+
+    <bean id="logoutController" class="com.openmft.controller.LogoutController"/>
+    <bean id="loginValidator" class="com.openmft.user.LoginValidator"/>
+    <bean id="openMFTController" class="com.openmft.controller.OpenMFTController">
+        <!--
+                  <property name="validator"><ref bean="loginValidator"/></property>
+        -->
+    </bean>
+
+    <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="mappings">
+            <props>
+                <prop key="/logout.htm">logoutController</prop>
+                <prop key="/login.htm">openMFTController</prop>
+                <prop key="/fileUpload.htm">fileUploadController</prop>
+                <prop key="/adminUpload.htm">adminUploadController</prop>
+                <prop key="/fileDownload.htm">fileDownloadController</prop>
+                <prop key="/adHocEmail.htm">adHocEmailController</prop>
+            </props>
+        </property>
+    </bean>
+
+
+    <bean id="multipartResolver"
+          class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+
+        <!-- one of the properties available; the maximum file size in bytes  this is around 50MB-->
+        <property name="maxUploadSize" value="50000000"/>
+    </bean>
+
+    <bean id="adminUploadController" class="com.openmft.controller.AdminUploadController">
+        <property name="commandClass" value="com.openmft.bean.AdminUploadBean"/>
+        <property name="formView" value="adminUpload.jsp"/>
+        <property name="successView" value="adminUploadConfirmation.jsp"/>
+        <property name="email1" ref="adminUploadEmail"/>
+    </bean>
+    <bean id="fileUploadController" class="com.openmft.controller.FileUploadController">
+        <property name="commandClass" value="com.openmft.bean.FileUploadBean"/>
+        <property name="formView" value="fileUpload.jsp"/>
+        <property name="successView" value="uploadConfirmation.jsp"/>
+        <property name="email1" ref="fileUploadEmail"/>
+        <property name="hostName" value="nas1"/>
+        <property name="userName" value="domain.local\username"/>
+        <property name="password" value="password"/>
+        <property name="remoteDir" value="/"/>
+        <property name="port" value="2101"/>
+    </bean>
+
+    <bean id="fileDownloadController" class="com.openmft.controller.FileDownloadController">
+        <property name="commandClass" value="com.openmft.bean.FileDownloadBean"/>
+        <property name="formView" value="fileDownload.jsp"/>
+        <property name="successView" value="userHome.jsp"/>
+    </bean>
+
+    <bean id="adHocEmailController" class="com.openmft.controller.AdHocEmailController">
+        <property name="commandClass" value="com.openmft.bean.AdHocEmailBean"/>
+        <property name="formView" value="adHocEmail.jsp"/>
+        <property name="successView" value="adminHome.jsp"/>
+        <property name="email" ref="fileAdHocUploadEmail"/>
+    </bean>
+
+    <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+        <property name="host" value="smtp"/>
+    </bean>
+
+    <!-- this is a template message that we can pre-load with default state -->
+    <bean id="templateMessage" class="org.springframework.mail.SimpleMailMessage">
+        <property name="from" value="dropbox@beer30.org"/>
+        <property name="subject" value="New File Added"/>
+    </bean>
+    <bean id="templateMessageAdmin" class="org.springframework.mail.SimpleMailMessage">
+        <property name="from" value="dropbox@beer30.org"/>
+        <property name="subject" value="New File Added and is Ready To Download"/>
+    </bean>
+
+
+    <bean id="fileAdHocUploadEmail" class="com.openmft.email.AdHocFileEmail">
+        <property name="mailSender" ref="mailSender"/>
+        <property name="templateMessage" ref="templateMessage"/>
+        <property name="adminEmail" value="dropbox-notification@beer30.org"/>
+    </bean>
+
+    <bean id="fileUploadEmail" class="com.openmft.email.FileUploadEmail">
+        <property name="mailSender" ref="mailSender"/>
+        <property name="templateMessage" ref="templateMessage"/>
+        <property name="adminEmail" value="dropbox-notification@beer30.org"/>
+    </bean>
+
+    <bean id="adminUploadEmail" class="com.openmft.email.AdminUploadEmail">
+        <property name="mailSender" ref="mailSender"/>
+        <property name="templateMessage" ref="templateMessageAdmin"/>
+        <property name="adminEmail" value="dropbox-notification@beer30.org"/>
+    </bean>
+
+
+</beans>
